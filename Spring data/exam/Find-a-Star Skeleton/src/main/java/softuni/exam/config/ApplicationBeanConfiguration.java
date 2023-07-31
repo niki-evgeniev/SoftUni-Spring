@@ -12,11 +12,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-// TODO:
 @Configuration
 public class ApplicationBeanConfiguration {
-
-
 
     @Bean
     public ModelMapper modelMapper() {
@@ -29,7 +26,6 @@ public class ApplicationBeanConfiguration {
                         DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
             }
         });
-
         return modelMapper;
     }
 
@@ -40,5 +36,4 @@ public class ApplicationBeanConfiguration {
                 .setPrettyPrinting()
                 .create();
     }
-
 }
