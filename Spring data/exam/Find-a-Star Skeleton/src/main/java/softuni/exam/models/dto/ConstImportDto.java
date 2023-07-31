@@ -5,6 +5,7 @@ import com.google.gson.annotations.Expose;
 import javax.validation.constraints.Size;
 
 public class ConstImportDto {
+    
     @Expose
     @Size(min = 3, max = 20)
     private String name;
