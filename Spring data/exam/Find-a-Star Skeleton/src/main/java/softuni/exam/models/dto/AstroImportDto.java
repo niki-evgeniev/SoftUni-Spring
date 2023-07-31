@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name = "astronomer")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class AstroImportDto {
+    
     @XmlElement(name = "average_observation_hours")
     @NotNull
     @DecimalMin("500.00")
