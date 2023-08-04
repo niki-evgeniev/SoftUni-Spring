@@ -2,13 +2,12 @@ package softuni.exam.service;
 
 import java.io.IOException;
 
-// TODO: Implement all methods
 
 public interface ConstellationService {
 
-    boolean areImported();
+boolean areImported();
 
-    String readConstellationsFromFile() throws IOException;
+String readConstellationsFromFile() throws IOException;
 
-	String importConstellations() throws IOException;
+String importConstellations() throws IOException;
 }
