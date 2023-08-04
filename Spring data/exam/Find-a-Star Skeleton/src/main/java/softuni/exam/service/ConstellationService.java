@@ -10,4 +10,5 @@ boolean areImported();
 String readConstellationsFromFile() throws IOException;
 
 String importConstellations() throws IOException;
+  
 }
