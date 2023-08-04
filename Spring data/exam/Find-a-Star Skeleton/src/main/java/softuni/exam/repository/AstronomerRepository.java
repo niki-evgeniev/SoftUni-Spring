@@ -7,7 +7,6 @@ import softuni.exam.models.entity.Astronomer;
 import javax.validation.constraints.NotNull;
 import java.util.Optional;
 
-// TODO:
 @Repository
 public interface AstronomerRepository extends JpaRepository<Astronomer, Long> {
 
