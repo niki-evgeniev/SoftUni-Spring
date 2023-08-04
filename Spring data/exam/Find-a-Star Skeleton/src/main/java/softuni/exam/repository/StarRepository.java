@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 
-// TODO:
 @Repository
 public interface StarRepository extends JpaRepository<Star, Long> {
 
