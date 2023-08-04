@@ -64,7 +64,7 @@ public class AstronomerServiceImpl implements AstronomerService {
             Star star = starRepository.findById(dto.getStar()).orElse(null);
 
 
-            if (findFirstAndLastName.isPresent()|| star == null || !validationUtil.isValid(dto)){
+            if (findFirstAndLastName.isPresent()|| star == null || !validationUtil.isValid(dto)) {
                 sb.append("Invalid astronomer");
 
             } else {
