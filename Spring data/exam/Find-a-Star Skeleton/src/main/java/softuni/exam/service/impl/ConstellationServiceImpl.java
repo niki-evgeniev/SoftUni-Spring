@@ -53,9 +53,9 @@ public class ConstellationServiceImpl implements ConstellationService {
 
             Optional<Constellation> findName = constellationRepository.findByName(dto.getName());
 
-            if (findName.isPresent() || !validationUtil.isValid(dto)){
+            if (findName.isPresent() || !validationUtil.isValid(dto)) {
                 sb.append("Invalid constellation");
-            }else {
+            } else {
                 Constellation map = modelMapper.map(dto, Constellation.class);
                 sb.append(String.format("Successfully imported constellation %s - %s",
                         dto.getName(), dto.getDescription()));
@@ -63,7 +63,6 @@ public class ConstellationServiceImpl implements ConstellationService {
                 constellationRepository.save(map);
             }
         }
-
         return sb.toString().trim();
     }
 }
