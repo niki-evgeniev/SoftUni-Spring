@@ -6,7 +6,6 @@ import softuni.exam.models.entity.Constellation;
 
 import java.util.Optional;
 
-// TODO:
 @Repository
 public interface ConstellationRepository extends JpaRepository<Constellation, Long> {
 
