@@ -22,7 +22,6 @@ public class Star extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "star_type")
-
     @NotNull
     private StarType starType;
 
