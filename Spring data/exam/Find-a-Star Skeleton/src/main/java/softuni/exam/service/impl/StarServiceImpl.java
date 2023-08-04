@@ -60,9 +60,9 @@ public class StarServiceImpl implements StarService {
 
             Optional<Star> findStarName = starRepository.findByName(dto.getName());
 
-            if (findStarName.isPresent() || !validationUtil.isValid(dto)){
+            if (findStarName.isPresent() || !validationUtil.isValid(dto)) {
                 sb.append("Invalid star");
-            }else {
+            } else {
                 Constellation constellation = constellationRepository.findById(dto.getConstellation())
                         .orElse(null);
 
