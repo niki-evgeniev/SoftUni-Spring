@@ -67,7 +67,7 @@ public class AstronomerServiceImpl implements AstronomerService {
             if (findFirstAndLastName.isPresent()|| star == null || !validationUtil.isValid(dto)){
                 sb.append("Invalid astronomer");
 
-            }else {
+            } else {
                 Astronomer map = modelMapper.map(dto, Astronomer.class);
 
                 Locale.setDefault(new Locale("en", "US"));
