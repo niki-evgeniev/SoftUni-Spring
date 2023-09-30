@@ -3,26 +3,32 @@ package com.example.pathfinder.models.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "routes")
 public class Route extends BaseEntity {
 
+    @Column(name = "name")
+    private String name;
+    @Column(name = "description", columnDefinition = "text")
+    private String description;
 
-    @Column(name = "gpx_coordinates")
+    @Column(name = "gpx_coordinates", columnDefinition = "longtext")
     private String gpxCoordinates;
 
     @Column(name = "level")
     @Enumerated(EnumType.STRING)
     private LevelEnum level;
 
-    @Column(name = "name")
-    private String name;
-
-    @Column(name = "url_video", columnDefinition = "text")
+    @Column(name = "video_url", columnDefinition = "text")
     private String urlVideo;
 
     @ManyToOne
     private User author;
+
+    @ManyToMany
+    private Set<Category> categories;
 
     public Route() {
     }
@@ -67,5 +73,11 @@ public class Route extends BaseEntity {
         this.author = author;
     }
 
+    public Set<Category> getCategories() {
+        return categories;
+    }
 
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
 }
