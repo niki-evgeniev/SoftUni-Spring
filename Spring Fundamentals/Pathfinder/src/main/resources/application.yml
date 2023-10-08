@@ -14,7 +14,7 @@ spring:
         enabled: true
   #sql:
     #init:
-      #mode: always
+     #mode: always
   jpa:
     # Choose either MySQL 8 or MySQL 5 below
     # For MySQL 8
@@ -32,4 +32,14 @@ spring:
 #cloudinary:
   #api-key: 
   #api-secret: 
-  #cloud-name: 
+  #cloud-name:
+
+  thymeleaf: # Thymeleaf
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+    prefix: file:src/main/resources/templates/
+    resources: # Static resources
+      static-locations: file:src/main/resources/static/
+      cache:
+        period: 0
