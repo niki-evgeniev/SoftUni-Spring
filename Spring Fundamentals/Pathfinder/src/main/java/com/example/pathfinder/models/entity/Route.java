@@ -34,6 +34,22 @@ public class Route extends BaseEntity {
     public Route() {
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getGpxCoordinates() {
         return gpxCoordinates;
     }
@@ -48,14 +64,6 @@ public class Route extends BaseEntity {
 
     public void setLevel(LevelEnum level) {
         this.level = level;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getUrlVideo() {
@@ -80,5 +88,9 @@ public class Route extends BaseEntity {
 
     public void setCategories(Set<Category> categories) {
         this.categories = categories;
+    }
+
+    public void addCategories(Set<Category> categories) {
+        this.categories.addAll(categories);
     }
 }

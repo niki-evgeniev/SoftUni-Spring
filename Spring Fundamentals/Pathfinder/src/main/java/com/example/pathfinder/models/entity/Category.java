@@ -8,19 +8,20 @@ import jakarta.persistence.*;
 public class Category extends BaseEntity {
 
     @Column(name = "name")
-    private String name;
+    @Enumerated(EnumType.STRING)
+    private CategoriesName name;
 
-    @Column(name ="description" )
+    @Column(name ="description", columnDefinition = "TEXT")
     private String description;
 
     public Category() {
     }
 
-    public String getName() {
+    public CategoriesName getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(CategoriesName name) {
         this.name = name;
     }
 
