@@ -32,11 +32,9 @@ public class UserController {
 
     @GetMapping("/login")
     public String login(Model model) {
-
         if (!model.containsAttribute("isFound")) {
             model.addAttribute("isFound", true);
         }
-
         return "login";
     }
 
@@ -46,16 +44,14 @@ public class UserController {
         if (bindingResult.hasErrors()) {
 
             redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
 
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.userLoginBindingModel", bindingResult);
             return "redirect:login";
         }
 
         userService.login(userLoginBindingModel);
 
         if (!loggedUser.isLogged()) {
-
             redirectAttributes.addFlashAttribute("userLoginBindingModel", userLoginBindingModel);
             redirectAttributes.addFlashAttribute("isFound", false);
 
@@ -65,6 +61,7 @@ public class UserController {
         return "redirect:/";
     }
 
+
     @GetMapping("/register")
     public ModelAndView register() {
 
@@ -72,13 +69,14 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String register(@Valid UserRegisterBindingModel userRegisterBindingModel, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String register(
+            @Valid UserRegisterBindingModel userRegisterBindingModel, BindingResult bindingResult,
+            RedirectAttributes redirectAttributes) {
 
 
         if (bindingResult.hasErrors() || !userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
             redirectAttributes.addFlashAttribute("userRegisterBindingModel", userRegisterBindingModel);
-            redirectAttributes.addFlashAttribute(
-                    "org.springframework.validation.BindingResult.userRegisterBindingModel", bindingResult);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.userRegisterBindingModel", bindingResult);
 
             return "redirect:register";
         }
@@ -90,10 +88,9 @@ public class UserController {
     }
 
     @GetMapping("/logout")
-        public String logout(HttpSession httpSession){
+    public String logout(HttpSession httpSession) {
 
         httpSession.invalidate();
-
         return "redirect:/";
     }
 
