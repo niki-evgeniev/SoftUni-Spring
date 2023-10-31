@@ -44,13 +44,12 @@ public class UserServiceImpl implements UserService {
             System.out.println();
             userRepository.save(user);
         }
-
     }
 
     @Override
     public void login(UserLoginBindingModel userLoginBindingModel) {
         Optional<User> user = userRepository.findByUsername(userLoginBindingModel.getUsername());
-        String username = user.get().getUsername();
+        System.out.println();
         loggedUser.setUsername(userLoginBindingModel.getUsername());
 
         if (user.isPresent() && passwordEncoder.matches(userLoginBindingModel.getPassword(), user.get().getPassword())) {
@@ -60,8 +59,6 @@ public class UserServiceImpl implements UserService {
                 loggedUser.setId(user.get().getId());
                 loggedUser.setLogged(true);
         }
-
-
     }
 
     @Override
@@ -78,9 +75,7 @@ public class UserServiceImpl implements UserService {
                     UserViewModel userViewModel = new UserViewModel();
                     userViewModel.setUsername(user.getUsername());
                     userViewModel.setCountOfOrders(user.getOrders().size());
-
                     return userViewModel;
-                })
-                .collect(Collectors.toList());
+                }).collect(Collectors.toList());
     }
 }
