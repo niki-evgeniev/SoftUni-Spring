@@ -21,7 +21,8 @@ public class CategoryServiceImpl implements CategoryService {
     public void initDataBaseCategories() {
         if (categoryRepository.count() == 0) {
 
-            Arrays.stream(CategoryNameEnum.values()).forEach(categoryNameEnum -> {
+            Arrays.stream(CategoryNameEnum.values())
+                    .forEach(categoryNameEnum -> {
                         Category category = new Category();
                         category.setName(categoryNameEnum);
                         switch (categoryNameEnum) {
