@@ -31,8 +31,7 @@ public class HomeController {
         }
         List<OrderViewModel> orders = orderService.findAllOrderByPriceDesc();
         model.addAttribute("orders", orders);
-        model.addAttribute("totalTime",
-                orders.stream()
+        model.addAttribute("totalTime",orders.stream()
                 .map(orderViewModel -> orderViewModel.getCategory().getNeededTime())
                 .reduce(Integer::sum)
                 .orElse(0));
