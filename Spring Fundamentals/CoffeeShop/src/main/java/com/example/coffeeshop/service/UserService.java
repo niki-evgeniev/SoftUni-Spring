@@ -8,6 +8,7 @@ import com.example.coffeeshop.view.UserViewModel;
 import java.util.List;
 
 public interface UserService {
+
     void register(UserRegisterBindingModel userRegisterBindingModel);
 
     void login(UserLoginBindingModel userLoginBindingModel);
