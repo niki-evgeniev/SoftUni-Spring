@@ -1,8 +1,8 @@
 package com.example.pathfinder.controler;
 
 import com.example.pathfinder.models.DTO.AddRouteDTO;
-import com.example.pathfinder.models.entity.CategoriesName;
-import com.example.pathfinder.models.entity.LevelEnum;
+import com.example.pathfinder.models.Enum.CategoriesName;
+import com.example.pathfinder.models.Enum.LevelEnum;
 import com.example.pathfinder.services.RouteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

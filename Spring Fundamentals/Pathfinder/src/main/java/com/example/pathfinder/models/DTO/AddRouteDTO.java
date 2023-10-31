@@ -1,7 +1,7 @@
 package com.example.pathfinder.models.DTO;
 
-import com.example.pathfinder.models.entity.LevelEnum;
-import com.example.pathfinder.models.entity.CategoriesName;
+import com.example.pathfinder.models.Enum.LevelEnum;
+import com.example.pathfinder.models.Enum.CategoriesName;
 
 import java.util.Set;
 
