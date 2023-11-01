@@ -1,23 +1,27 @@
 package com.example.mobilele.model.entity;
 
 
+import com.example.mobilele.model.enums.RolesType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "roles")
-public class UserRole extends BaseEntity {
+public class UserRole extends BaseEntity{
 
-    private RolesType role;
+    @Enumerated(EnumType.STRING)
+    private RolesType roles;
 
     public UserRole() {
     }
 
-    public RolesType getRole() {
-        return role;
+    public RolesType getRoles() {
+        return roles;
     }
 
-    public void setRole(RolesType role) {
-        this.role = role;
+    public void setRoles(RolesType roles) {
+        this.roles = roles;
     }
 }
