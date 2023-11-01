@@ -1,5 +1,6 @@
 package com.example.mobilele.model.entity;
 
+import com.example.mobilele.model.enums.CategoryModel;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
