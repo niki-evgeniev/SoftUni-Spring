@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a24e2344-5c3a-454b-85fb-5ae88e25f654" name="Changes" comment="" />
+    <list default="true" id="a24e2344-5c3a-454b-85fb-5ae88e25f654" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pathfinder/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/LevelEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Pathfinder/src/main/java/com/example/pathfinder/models/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Pathfinder/src/main/resources/application.properties" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,41 +21,55 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2WoTR9Puiy8gJtgB3NoEqZ523rY" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Nikolay/Desktop/Spring project/PlannerApp/PlannerApp",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nikolay/Desktop/Spring project/PlannerApp/PlannerApp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.plannerapp.model.view" />
+      <recent name="com.plannerapp.service.impl" />
+      <recent name="com.plannerapp.model.bindingModel" />
       <recent name="com.plannerapp.model.entity" />
     </key>
   </component>
@@ -70,10 +92,102 @@
       <option name="presentableId" value="Default" />
       <updated>1697397922426</updated>
       <workItem from="1697397923530" duration="2322000" />
+      <workItem from="1697488274948" duration="1663000" />
+      <workItem from="1697564482709" duration="2304000" />
+      <workItem from="1697567154824" duration="2475000" />
+      <workItem from="1697569685022" duration="4316000" />
+      <workItem from="1697574017929" duration="1821000" />
+      <workItem from="1697582160076" duration="1602000" />
+      <workItem from="1697650717987" duration="2854000" />
+      <workItem from="1697653589815" duration="8239000" />
+      <workItem from="1697662684417" duration="893000" />
+      <workItem from="1697740407048" duration="5434000" />
+      <workItem from="1697804441446" duration="42000" />
+      <workItem from="1698273834715" duration="1965000" />
+      <workItem from="1698353653583" duration="1875000" />
+      <workItem from="1698355822126" duration="6000" />
+      <workItem from="1698624308836" duration="2593000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/TaskController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/service/impl/TaskServiceImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/service/impl/TaskServiceImpl.java</url>
+          <line>66</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/TaskController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/TaskController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/service/impl/UserServerImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/UserController.java</url>
+          <line>73</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/UserController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/service/impl/UserServerImpl.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/TaskController.java</url>
+          <line>48</line>
+          <properties class="com.plannerapp.controller.TaskController" method="assign">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/plannerapp/controller/TaskController.java</url>
+          <line>26</line>
+          <properties class="com.plannerapp.controller.TaskController" method="addTask">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="bindingResult" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PlannerApp$PlannerApplication.ic" NAME="PlannerApplication Coverage Results" MODIFIED="1697573584829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
