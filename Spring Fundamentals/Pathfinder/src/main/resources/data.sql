@@ -10,7 +10,7 @@ VALUES (3, 'USER');
 
 -- some test users
 INSERT INTO users (id, age, email, full_name, level, password, username)
-VALUES (1, 28, 'admin@admin.com', 'Admin Adminov', 'ADVANCED', '26dd1ba9ae974a70136ea4463046371516661b0601ca0fb83a905876ca549b3473dd524d578e241b', 'admin');
+VALUES (1, 28, 'admin@admin.com', 'Admin Adminov', 'ADVANCED', '26dd1ba9ae974a70136ea4463046371516661b0601ca0fb83a905876ca549b3473dd524d578e241b', 'admin1');
 
 INSERT INTO users (id, age, email, full_name, level, password, username)
 VALUES (2, 29, 'moderator@moderator.com', 'Moderator Moderatorov', 'INTERMEDIATE', '26dd1ba9ae974a70136ea4463046371516661b0601ca0fb83a905876ca549b3473dd524d578e241b',
