@@ -9,6 +9,7 @@ import java.util.Set;
 public class Priority extends BaseEntity{
 
     @Column(name = "priority_name", nullable = false)
+    @Enumerated(EnumType.STRING)
     private PriorityNameEnum priorityName;
 
     @Column(name = "description", nullable = false)
