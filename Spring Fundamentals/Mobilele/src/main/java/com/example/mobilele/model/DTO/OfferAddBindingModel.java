@@ -3,21 +3,46 @@ package com.example.mobilele.model.DTO;
 import com.example.mobilele.model.enums.CategoryModel;
 import com.example.mobilele.model.enums.EngineType;
 import com.example.mobilele.model.enums.TransmissionType;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
 
 public class OfferAddBindingModel {
+
+    @NotNull
     private EngineType engine;
+
+    @Positive
+    @NotNull
     private Long modelId;
+
+    @Positive
+    @NotNull
     private BigDecimal price;
+
+    @NotNull
     private TransmissionType transmission;
+
+    @NotEmpty
     private String imageUrl;
+
+    @NotNull
+    @Min(1950)
     private Integer year;
+
+    @Positive
+    @NotNull
     private Integer mileage;
+
+    @NotEmpty
+    @Size(min = 5, max = 512)
     private String description;
 
     public OfferAddBindingModel() {
     }
+
 
     public EngineType getEngine() {
         return engine;

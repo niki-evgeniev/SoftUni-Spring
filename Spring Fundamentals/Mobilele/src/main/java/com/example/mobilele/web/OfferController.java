@@ -1,6 +1,7 @@
 package com.example.mobilele.web;
 
 import com.example.mobilele.model.DTO.OfferAddBindingModel;
+import com.example.mobilele.services.BrandService;
 import com.example.mobilele.services.OfferService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
@@ -16,27 +17,50 @@ import org.springframework.web.servlet.ModelAndView;
 public class OfferController {
 
     private final OfferService offerService;
+    private final BrandService brandService;
 
-    public OfferController(OfferService offerService) {
+    public OfferController(OfferService offerService, BrandService brandService) {
         this.offerService = offerService;
+        this.brandService = brandService;
     }
+
+//    @ModelAttribute("engines")
+//    public EngineType[] engines() {
+//        return EngineType.values();
+//    }
+
 
     @GetMapping("/add")
     public ModelAndView add() {
-        return new ModelAndView("offer-add");
+
+        ModelAndView modelAndView = new ModelAndView("offer-add");
+        modelAndView.addObject("brands", brandService.getAllBrand());
+
+        return modelAndView;
     }
 
     @PostMapping("/add")
-    public ModelAndView modelAndView(@ModelAttribute("offerAddBindingModel") @Valid OfferAddBindingModel offerAddBindingModel,
+    public ModelAndView modelAndView(@Valid OfferAddBindingModel offerAddBindingModel,
                                      BindingResult bindingResult) {
 
-        if (!bindingResult.hasErrors()){
+        if (!bindingResult.hasErrors()) {
             boolean offerIsAdded = offerService.addOffer(offerAddBindingModel);
+            if (offerIsAdded){
+                return new ModelAndView("index");
+            }
         }
 
-
-
         return new ModelAndView("offer-add");
+    }
+
+    @ModelAttribute OfferAddBindingModel offerAddBindingModel (){
+        return new OfferAddBindingModel();
+    }
+
+
+    @GetMapping("/all")
+    public ModelAndView all(){
+        return new ModelAndView("offers");
     }
 
 }

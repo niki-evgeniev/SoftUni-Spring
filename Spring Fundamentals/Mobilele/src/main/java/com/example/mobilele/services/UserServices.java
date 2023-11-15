@@ -7,5 +7,5 @@ public interface UserServices {
 
     boolean register(UserRegisterBindingModel userRegisterBindingModel);
 
-    boolean login(UserLoginBindingModel userLoginBindingModel);
+//    boolean login(UserLoginBindingModel userLoginBindingModel);
 }

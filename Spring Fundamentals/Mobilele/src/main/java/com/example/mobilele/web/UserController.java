@@ -28,22 +28,21 @@ public class UserController {
         return "auth-login";
     }
 
-    @PostMapping("/login")
-    public ModelAndView login(@ModelAttribute("userLoginBindingModel") @Valid UserLoginBindingModel userLoginBindingModel,
-                              BindingResult bindingResult){
-
-        if (!bindingResult.hasErrors()){
-            boolean isLogged = userServices.login(userLoginBindingModel);
-            if (isLogged){
-                return new ModelAndView("index");
-            }
-        }
-
-        ModelAndView modelAndView = new ModelAndView("auth-login");
-        modelAndView.addObject("isNotLogged", true);
-
-        return modelAndView;
-    }
+//    @PostMapping("/login")
+//    public ModelAndView login(@ModelAttribute("userLoginBindingModel") @Valid UserLoginBindingModel userLoginBindingModel,
+//                              BindingResult bindingResult){
+//
+//        if (!bindingResult.hasErrors()){
+//            boolean isLogged = userServices.login(userLoginBindingModel);
+//            if (isLogged){
+//                return new ModelAndView("index");
+//            }
+//        }
+//        ModelAndView modelAndView = new ModelAndView("auth-login");
+//        modelAndView.addObject("isNotLogged", true);
+//
+//        return modelAndView;
+//    }
 
     @GetMapping("/register")
     public String register() {
