@@ -13,6 +13,7 @@ VALUES
     (1, 'Toyota'),
     (2, 'Ford');
 
+
 INSERT INTO `models` (`id`, `category`, `brand_id`, `name`)
 VALUES
     (1, 'CAR', 1, 'Camry'),

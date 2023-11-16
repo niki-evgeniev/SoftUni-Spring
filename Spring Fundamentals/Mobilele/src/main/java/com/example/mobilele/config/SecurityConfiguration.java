@@ -2,6 +2,7 @@ package com.example.mobilele.config;
 
 import com.example.mobilele.repository.UserRepository;
 import com.example.mobilele.services.impl.MobileleUserDetailsService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,13 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfiguration {
+
+    private final String rememberMeKey;
+
+    public SecurityConfiguration(@Value("${mobilele.remember.me.key}")
+                                 String rememberMeKey) {
+        this.rememberMeKey = rememberMeKey;
+    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -38,7 +46,6 @@ public class SecurityConfiguration {
                             .passwordParameter("password")
                             //ако се логнем успешно каде да отидем
                             .defaultSuccessUrl("/")
-                            //error
                             .failureForwardUrl("/users/login-error");
                 }
         ).logout(
@@ -48,17 +55,26 @@ public class SecurityConfiguration {
                             .invalidateHttpSession(true);
 
                 }
+        ).rememberMe(
+                rememberMe -> {
+                    rememberMe
+                            .key(rememberMeKey)
+                            .rememberMeParameter("rememberme")
+                            .rememberMeCookieName("rememberme");
+                }
         );
+
+
         return httpSecurity.build();
     }
 
     @Bean
-    public UserDetailsService userDetailsService(UserRepository userRepository){
-     return new MobileleUserDetailsService(userRepository);
+    public UserDetailsService userDetailsService(UserRepository userRepository) {
+        return new MobileleUserDetailsService(userRepository);
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder() {
         return Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
     }
 }
