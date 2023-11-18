@@ -31,7 +31,7 @@ public class SecurityConfiguration {
                         //всички статични ресурси могат да се видят-> js, images, css can see from anyone
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         // Всички могат да виждат логин, регистер и хоме
-                        .requestMatchers("/", "/users/login", "/users/register").permitAll()
+                        .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
                         .requestMatchers("/offers/all").permitAll()
                         .anyRequest().authenticated()
 
@@ -39,7 +39,8 @@ public class SecurityConfiguration {
                 formLogin -> {
                     //redirect като достъпим нещо което не е достъпно
                     // предпочитана страница
-                    formLogin.loginPage("/users/login")
+                    formLogin
+                            .loginPage("/users/login")
                             //това име "username" трябва да съвпада с името от HTML логин
                             .usernameParameter("username")
                             //това име "password" трябва да съвпада с името от HTML логин

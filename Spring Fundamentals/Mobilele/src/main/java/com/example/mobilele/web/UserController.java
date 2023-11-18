@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-//@RequestMapping("/users")
+@RequestMapping("/users")
 public class UserController {
 
 
@@ -24,33 +24,26 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    @GetMapping("/users/login")
+    @GetMapping("/login")
     public String login() {
         return "auth-login";
     }
 
-//    @PostMapping("/users/login-error")
-//    public ModelAndView onFailure(@Valid UserLoginBindingModel userLoginBindingModel) {
-//
-//        ModelAndView modelAndView = new ModelAndView("auth-login");
-//        modelAndView.addObject("bad_credentials", true);
-//
-//        return modelAndView;
-//    }
-    @PostMapping("/users/login-error")
-    public String onFailure(Model model) {
+    @PostMapping("/login-error")
+    public ModelAndView errorLogin() {
 
-        model.addAttribute("bad_credentials", "true");
+        ModelAndView modelAndView = new ModelAndView("auth-login");
+        modelAndView.addObject("bad_credentials", true);
 
-        return "auth-login";
+        return modelAndView;
     }
 
-    @GetMapping("/users/register")
+    @GetMapping("/register")
     public String register() {
         return "auth-register";
     }
 
-    @PostMapping("/users/register")
+    @PostMapping("/register")
     public ModelAndView register(@Valid UserRegisterBindingModel userRegisterBindingModel, BindingResult bindingResult) {
 
         if (!bindingResult.hasErrors()) {
@@ -68,6 +61,11 @@ public class UserController {
     @ModelAttribute
     UserRegisterBindingModel userRegisterBindingModel() {
         return new UserRegisterBindingModel();
+    }
+
+    @ModelAttribute
+    UserLoginBindingModel userLoginBindingModel(){
+        return new UserLoginBindingModel();
     }
 
 
