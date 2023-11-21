@@ -29,7 +29,7 @@ public class OfferAddBindingModel {
     private String imageUrl;
 
     @NotNull
-    @Min(1950)
+    @Min(value = 1950 , message = "Year must be bigger then 1950")
     private Integer year;
 
     @Positive

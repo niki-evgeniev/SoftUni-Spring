@@ -48,7 +48,6 @@
                         th:action="@{/users/logout}">
                             <input type="submit"  class="btn btn-dark " value="Logout"></input>
                         </form>
-
                     </div>
                 </li>
                 <th:block  sec:authorize="!isAuthenticated()">

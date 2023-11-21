@@ -32,7 +32,7 @@ public class SecurityConfiguration {
                         .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                         // Всички могат да виждат логин, регистер и хоме
                         .requestMatchers("/", "/users/login", "/users/register", "/users/login-error").permitAll()
-                        .requestMatchers("/offers/all").permitAll()
+                        .requestMatchers("/offers/all", "/offers/add").permitAll()
                         .anyRequest().authenticated()
 
         ).formLogin(

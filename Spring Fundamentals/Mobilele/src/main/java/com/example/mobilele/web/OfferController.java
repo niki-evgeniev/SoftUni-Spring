@@ -46,7 +46,7 @@ public class OfferController {
         if (!bindingResult.hasErrors()) {
             boolean offerIsAdded = offerService.addOffer(offerAddBindingModel);
             if (offerIsAdded){
-                return new ModelAndView("index");
+                return new ModelAndView("details");
             }
         }
 
@@ -58,9 +58,9 @@ public class OfferController {
     }
 
 
-    @GetMapping("/all")
-    public ModelAndView all(){
-        return new ModelAndView("offers");
-    }
+//    @GetMapping("/all")
+//    public ModelAndView all(){
+//        return new ModelAndView("offers");
+//    }
 
 }
