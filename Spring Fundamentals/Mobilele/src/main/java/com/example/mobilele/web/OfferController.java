@@ -6,10 +6,7 @@ import com.example.mobilele.services.OfferService;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -62,5 +59,10 @@ public class OfferController {
 //    public ModelAndView all(){
 //        return new ModelAndView("offers");
 //    }
+
+    @GetMapping("/{id}")
+    public String details(@PathVariable ("id") String id) {
+        return "details";
+    }
 
 }

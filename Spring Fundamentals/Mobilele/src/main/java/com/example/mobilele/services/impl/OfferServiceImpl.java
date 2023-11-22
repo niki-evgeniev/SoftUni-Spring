@@ -1,6 +1,7 @@
 package com.example.mobilele.services.impl;
 
 import com.example.mobilele.model.DTO.OfferAddBindingModel;
+import com.example.mobilele.model.DTO.OfferSummaryBindingModel;
 import com.example.mobilele.model.entity.Model;
 import com.example.mobilele.model.entity.Offer;
 import com.example.mobilele.repository.ModelRepository;
@@ -8,6 +9,8 @@ import com.example.mobilele.repository.OfferRepository;
 import com.example.mobilele.repository.UserRepository;
 import com.example.mobilele.services.OfferService;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -36,7 +39,7 @@ public class OfferServiceImpl implements OfferService {
 
 //        Offer newOffer = modelMapper.map(offerAddBindingModel, Offer.class);
         Model model = modelRepository.findById(offerAddBindingModel.getModelId())
-                .orElseThrow( ()-> new IllegalArgumentException("Model with id" + offerAddBindingModel.getModelId() + "not found!"));
+                .orElseThrow(() -> new IllegalArgumentException("Model with id" + offerAddBindingModel.getModelId() + "not found!"));
         newOffer.setModel(model);
         newOffer.setCreated(LocalDateTime.now());
 //        newOffer.setSeller();
@@ -46,7 +49,26 @@ public class OfferServiceImpl implements OfferService {
         return true;
     }
 
-    private Offer map(OfferAddBindingModel offerAddBindingModel) {
+    @Override
+    public Page<OfferSummaryBindingModel> getAllOffers(Pageable pageable) {
+        return offerRepository.findAll(pageable)
+                .map(OfferServiceImpl::mapAsSummary);
+    }
+
+    private static OfferSummaryBindingModel mapAsSummary(Offer offer) {
+        return new OfferSummaryBindingModel(
+                offer.getId().toString(),
+                offer.getModel().getBrand().getName(),
+                offer.getModel().getName(),
+                offer.getYear(),
+                offer.getMileage(),
+                offer.getPrice(),
+                offer.getImageUrl(),
+                offer.getEngine(),
+                offer.getTransmission());
+    }
+
+    private static Offer map(OfferAddBindingModel offerAddBindingModel) {
         Offer offer = new Offer();
 
         offer.setDescription(offerAddBindingModel.getDescription());
