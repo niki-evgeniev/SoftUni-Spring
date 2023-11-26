@@ -55,11 +55,6 @@ public class Brand extends BaseEntity {
         return models;
     }
 
-//    public Brand setModels(List<Model> models) {
-//        this.models = models;
-//        return this;
-//    }
-
 
     public void setModels(List<Model> models) {
         this.models = models;

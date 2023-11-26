@@ -22,15 +22,12 @@ public class OffersController {
 
     @GetMapping("/all")
     public ModelAndView allOffers (
-            @PageableDefault( size = 2)
+            @PageableDefault( size = 10, sort = "price")
             Pageable pageable){
 
         ModelAndView modelAndView = new ModelAndView("offers");
         Page<OfferSummaryBindingModel> allOffers = offerService.getAllOffers(pageable);
         modelAndView.addObject("offers", allOffers);
-//        modelAndView.addObject("currentPage", allOffers.getNumber());
-//        modelAndView.addObject("totalPages", allOffers.getTotalPages());
-//        modelAndView.addObject("pageSize", allOffers.getSize());
 
         return modelAndView;
     }

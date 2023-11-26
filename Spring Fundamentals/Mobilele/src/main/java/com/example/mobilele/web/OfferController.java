@@ -1,10 +1,13 @@
 package com.example.mobilele.web;
 
 import com.example.mobilele.model.DTO.OfferAddBindingModel;
+import com.example.mobilele.model.DTO.OfferDetailsBindingModel;
 import com.example.mobilele.services.BrandService;
 import com.example.mobilele.services.OfferService;
+import com.example.mobilele.services.exception.ObjectNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -61,8 +64,23 @@ public class OfferController {
 //    }
 
     @GetMapping("/{id}")
-    public String details(@PathVariable ("id") String id) {
+    public String details(@PathVariable ("id") String id, Model model) {
+
+        OfferDetailsBindingModel offerDetails= offerService.getOfferDetails(id)
+                .orElseThrow(() -> new ObjectNotFoundException("Offer details not found"));
+
+        model.addAttribute("offerDetails", offerDetails);
+
         return "details";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable String id){
+
+        offerService.deleteOffer(id);
+
+        return "redirect:/offers/all";
+
     }
 
 }
